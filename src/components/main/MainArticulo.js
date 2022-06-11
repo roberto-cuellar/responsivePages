@@ -41,106 +41,106 @@ export const MainArticulo = () => {
     const handleClose = () => setOpen(false);
   return (
       <>
-        <Grid container sx={{backgroundColor: 'action.disabledBackground',padding: 1}}>
-            <Grid item xs={6}>
-            <Typography  
-            sx={{
-                textAlign: 'left',
-            }}
-            variant="h4" 
-            color='text.primary' 
-            my={1}
-            >{articulo.titulo}
-        </Typography>
-                <Link href={'https://ojs.unipamplona.edu.co/ojsviceinves/index.php/bistua/'} underline="hover">
-                    <Typography sx={{ fontSize: 14 }} gutterBottom>
-                            BISTUA {`Vol. ${articulo.vol} num ${articulo.num}. Año ${articulo.year}`}
-                    </Typography>
-                </Link>
-                    <Typography  
-                        sx={{
-                            textAlign: 'left',
-                        }}
-                        variant="h5" 
-                        color='text.primary' 
-                        my={1}
-                        >Resumen:
-                    </Typography>
-                    <Typography sx={{ mb: 1.5,textAlign: 'justify' }} color="text.secondary" >
-                        {(articulo.resumen).toString().slice(0,1000)}...<Button onClick={handleOpen}>Ver todo</Button>
-                </Typography>
-                <Link href={articulo.linkPdf} target="_blank" underline="none"> 
-                    <Button size='large' variant='outlined'>DESCARGAR</Button>
-                </Link>    
+        <Grid container sx={{backgroundColor: 'background.default',padding: 1,height: '100%',padding: 2}}>
+            <Grid item xs={12} md={6}>
                 <Typography  
-                        sx={{
-                            textAlign: 'left',
-                        }}
-                        variant="h6" 
-                        color='text.primary' 
-                        my={1}
-                        >Cómo citar :{
-                            <Tooltip title='Más formatos de citación'>
-                                <IconButton>
-                                    <FormatQuoteIcon color='secondary'/>
-                                </IconButton>
-                            </Tooltip>}
-                </Typography>  
-                <Typography variant="body2" sx={{ mb: 1.5,textAlign: 'justify' }} color="text.secondary" >
-                        {`Araque Castellanos, D., Cancino Escalante, G. ., Hernandez Contreras, D. ., & Chinchilla Cardenas, D. (2022). Diversidad genética de Rubus glaucus Benth en el municipio de Pamplona (nororiente de Colombia). BISTUA REVISTA DE LA FACULTAD DE CIENCIAS BASICAS, 19(2), 8-14. https://doi.org/10.24054/01204211.v2.n2.2021.1125 (Original work published 21 de diciembre de 2021)`}
-                </Typography>
+                sx={{
+                    textAlign: 'justify',
+                }}
+                variant="h4" 
+                color='text.primary' 
+                my={1}
+                >{articulo.titulo}
+            </Typography>
+                    <Link href={'https://ojs.unipamplona.edu.co/ojsviceinves/index.php/bistua/'} underline="hover">
+                        <Typography sx={{ fontSize: 14,textAlign: 'left' }} gutterBottom>
+                                BISTUA {`Vol. ${articulo.vol} num ${articulo.num}. Año ${articulo.year}`}
+                        </Typography>
+                    </Link>
+                        <Typography  
+                            sx={{
+                                textAlign: 'left',
+                            }}
+                            variant="h5" 
+                            color='text.primary' 
+                            my={1}
+                            >Resumen:
+                        </Typography>
+                        <Typography sx={{ mb: 1.5,textAlign: 'justify' }} color="text.secondary" >
+                            {(articulo.resumen).toString().slice(0,1000)}...<Button onClick={handleOpen}>Ver todo</Button>
+                    </Typography>
+                    <Link href={articulo.linkPdf} target="_blank" underline="none"> 
+                        <Button size='large' variant='outlined'>DESCARGAR</Button>
+                    </Link>    
+                    <Typography  
+                            sx={{
+                                textAlign: 'left',
+                            }}
+                            variant="h6" 
+                            color='text.primary' 
+                            my={1}
+                            >Cómo citar :{
+                                <Tooltip title='Más formatos de citación'>
+                                    <IconButton>
+                                        <FormatQuoteIcon color='secondary'/>
+                                    </IconButton>
+                                </Tooltip>}
+                    </Typography>  
+                    <Typography variant="body2" sx={{ mb: 1.5,textAlign: 'justify' }} color="text.secondary" >
+                            {articulo.citaStd}
+                    </Typography>
                 
 
             </Grid>
-            <Grid item xs={6} sx={{paddingLeft: 9,paddingTop: 3}}>
-            <Box
-                component="img"
-                sx={{
-                height: 400,
-                borderRadius: 4,
-                boxShadow: 4
-                //width: 350,
-                // maxHeight: 400,
-                // maxWidth: { xs: 350, md: 250 },
-                }}
-                alt="article image."
-                src={articulo.linkImg}      
-            />
-            <Box
-                sx={{
-                width: 400,
-                }}
-            >
-                <Typography  
-                            sx={{
-                                textAlign: 'left',
-                            }}
-                            variant="h6" 
-                            color='text.primary' 
-                            my={1}
-                            >Autores</Typography>
-                <>
-                
-                {articulo.autores.map((autor,index)=>(
-                    <Box key={autor+index}>
-                        <Typography  variant="body2" sx={{ mb: 0.0,textAlign: 'justify' }} color="text.secondary" >{autor}</Typography>
-                        <Typography variant="body2" sx={{ mb: 0.5,fontWeight: 700 }} color="text.secondary" >{articulo.afiliacion[index]}</Typography>
-                    </Box>
+            <Grid className='columnaArticulo' item xs={12} md={6} sx={{paddingLeft: 1,paddingTop: 3}}>
+                <Box
+                    component="img"
+                    sx={{
+                    height: 400,
+                    borderRadius: 4,
+                    boxShadow: 4
+                    //width: 350,
+                    // maxHeight: 400,
+                    // maxWidth: { xs: 350, md: 250 },
+                    }}
+                    alt="article image."
+                    src={articulo.linkImg}      
+                />
+                <Box
+                    sx={{
+                    width: '100%',
+                    }}
+                >
+                    <Typography  
+                                sx={{
+                                    textAlign: 'center',
+                                }}
+                                variant="h6" 
+                                color='text.primary' 
+                                my={1}
+                                >Autores</Typography>
+                    <>
                     
-                    ))}
-                
-                </>
-                <Typography  
-                            sx={{
-                                textAlign: 'left',
-                            }}
-                            variant="h6" 
-                            color='text.primary' 
-                            my={1}
-                >Palabras Clave</Typography>
-                <Typography variant="body2" sx={{ mb: 0.0,textAlign: 'justify' }} color="text.secondary" > {(articulo.keywordsVect).toString()}</Typography>
+                    {articulo.autores.map((autor,index)=>(
+                        <Box key={autor+index}>
+                            <Typography  variant="body2" sx={{ mb: 0.0,textAlign: 'center' }} color="text.secondary" >{autor}</Typography>
+                            <Typography variant="body2" sx={{ mb: 0.5,fontWeight: 700 }} color="text.secondary" >{articulo.afiliacion[index]}</Typography>
+                        </Box>
+                        
+                        ))}
+                    
+                    </>
+                    <Typography  
+                                sx={{
+                                    textAlign: 'center',
+                                }}
+                                variant="h6" 
+                                color='text.primary' 
+                                my={1}
+                    >Palabras Clave</Typography>
+                    <Typography variant="body2" sx={{ mb: 0.0,textAlign: 'center' }} color="text.secondary" > {(articulo.keywordsVect).toString()}</Typography>
 
-            </Box>
+                </Box>
             </Grid>
         </Grid>
         <Modal

@@ -22,7 +22,7 @@ export const MainGeneral = () => {
         setInicio(value);
     };
   return (
-    <Box sx={{ margin: 0,padding: 2}}>
+    <Box sx={{ margin: 0,padding: 2,backgroundColor: 'background.default'}}>
         <TextField 
                 id="outlined-basic" 
                 label="Buscar en la base de datos" 

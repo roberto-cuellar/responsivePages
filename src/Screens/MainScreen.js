@@ -5,10 +5,10 @@ import { Main } from '../components/main/Main'
 import { Navbar } from '../components/navbar/Navbar'
 import { SideBar } from '../components/sidebar/SideBar'
 
-export const MainScreen = () => {
+export const MainScreen = ({mode,setMode}) => {
   return (
    <>
-      <Header />
+      <Header setMode={setMode} mode={mode} />
       <Navbar />
       <Main />
       <SideBar />

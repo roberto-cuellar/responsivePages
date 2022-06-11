@@ -9,7 +9,7 @@ import { SideBar } from '../components/sidebar/SideBar'
 import { Navigate } from "react-router-dom";
 
 
-export const ArticleScreen = () => {
+export const ArticleScreen = ({setMode,mode}) => {
   
   const contextArticulo = useContext(ArticleContext);
   const articulo = JSON.parse(localStorage.getItem('articuloSeleccionado'));
@@ -24,7 +24,7 @@ export const ArticleScreen = () => {
     <>
     {
       !retornar? <Navigate to="/"  />: <>
-          <Header />
+          <Header setMode={setMode} mode={mode} />
           <Navbar />
           <Main />
           <SideBar />

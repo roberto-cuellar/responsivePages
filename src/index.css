@@ -40,9 +40,9 @@ body{
 
 /* Selector de todos los hijos del grid container */
 #root > *{ 
-  box-shadow: -1px 1px 7px 0 rgba(0,0,0,0.75);
-  border-radius: 4px;
-  padding: 10px;
+  /* box-shadow: 0px 1px 0px 0 rgba(0,0,0,0.75);
+  border-radius: 4px; */
+  padding: 0px;
   text-align: center;
 }
 
@@ -51,28 +51,28 @@ body{
 
 .header{
   grid-area: header;
-  background-color: rgb(202, 148, 78);
+  /* background-color: rgb(202, 148, 78); */
 }
 
 .navbar{
   grid-area: navbar;
-  background-color: rgb(108, 90, 214);
+  /* background-color: rgb(108, 90, 214); */
 }
 
 .main{
   grid-area: main;
-  background-color: rgb(107, 17, 107);
+  /* background-color: rgb(107, 17, 107); */
 }
 
 .sidebar{
   grid-area: sidebar;
-  background-color: rgb(179, 241, 9);
+  /* background-color: rgb(179, 241, 9); */
 }
 
 .footer{
   /* Se le asigna el nombre del área a este componente */
   grid-area: footer;
-  background-color: antiquewhite;
+  /* background-color: antiquewhite; */
 }
 
 
@@ -105,7 +105,7 @@ body{
 
 
 /* Pantalla para tablets */
-@media (min-width: 600px){
+@media (min-width: 900px){
   #root{
 
       grid-template: 
@@ -123,6 +123,9 @@ body{
     position: relative;
     display: flex;
     flex-direction: row;    
+  }
+  .MuiGrid-grid-md-6.columnaArticulo{
+    padding-left: 40px;
   }
 }
 
