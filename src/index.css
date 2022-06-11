@@ -1,0 +1,145 @@
+*{/*Se le aplica esta propiedad a todos los elementos*/
+    
+  /* Ajusta la forma en como se calcula el total width y height ,
+  con border-box, el padding se ajusta al tamaño del padre, mientras que
+  con content-box, solo el contenido tiene el tamaño del padre y el 
+  hijo queda por exceso
+  */
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  /* El contenedor principal tiene el 100%, y el body tiene un min-width
+  de 100%, por ende todos los elementos se desplegará para ocupar el 100%
+  de la página */
+  /* height: 100%; */
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  /* El min-height garantiza que siempre se tenga el 100% de height del objeto
+  padre */
+  /* min-height: 100%; */
+}
+
+#root {
+  /* Instrucción necesaria para que el componente ocupe como mínimo
+  el 100% del vieww port */
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+    "header" 100px
+    /* "navbar" 50px */
+    "main" auto
+    "sidebar" 100px
+    "footer" 100px
+}
+
+/* Selector de todos los hijos del grid container */
+#root > *{ 
+  box-shadow: -1px 1px 7px 0 rgba(0,0,0,0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+
+/*  */
+
+.header{
+  grid-area: header;
+  background-color: rgb(202, 148, 78);
+}
+
+.navbar{
+  grid-area: navbar;
+  background-color: rgb(108, 90, 214);
+}
+
+.main{
+  grid-area: main;
+  background-color: rgb(107, 17, 107);
+}
+
+.sidebar{
+  grid-area: sidebar;
+  background-color: rgb(179, 241, 9);
+}
+
+.footer{
+  /* Se le asigna el nombre del área a este componente */
+  grid-area: footer;
+  background-color: antiquewhite;
+}
+
+
+
+/* Pantalla para tablets */
+@media (min-width: 0px){
+  #root{
+    grid-template:
+    "header" 100px
+    /* "navbar" 50px */
+    "main" auto
+    "sidebar" 100px
+    "footer" 100px
+      200px auto
+      ;        
+  }
+  .navbar{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+  }
+}
+
+
+
+
+
+
+/* Pantalla para tablets */
+@media (min-width: 600px){
+  #root{
+
+      grid-template: 
+      "header  header" 100px
+      "navbar  navbar" 50px
+      /* El sidebar main hacer referecia en que habrán dos columnas
+      para definir una columna vacía se completa con un . */
+      "main main" auto
+      "sidebar sidebar" 100px
+      "footer  footer" 100px/
+      200px auto
+      ;        
+  }
+  .navbar{
+    position: relative;
+    display: flex;
+    flex-direction: row;    
+  }
+}
+
+/* Pantalla para pcs escritorio */
+@media (min-width: 1300px){
+  #root{
+
+      grid-template: 
+      "header header header" 100px
+      "navbar navbar navbar" 50px
+      "main main sidebar" auto
+      /* El sidebar main hacer referecia en que habrán dos columnas
+      para definir una columna vacía se completa con un . */
+      "footer footer footer" 100px/
+       250px auto 250px
+      ;        
+  }
+  .sidebar{
+    display: block;
+  }
+}
