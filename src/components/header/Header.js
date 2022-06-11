@@ -14,7 +14,7 @@ export const Header = ({setMode,mode}) => {
   };
   return (
     <header className="header">
-      <Grid container sx={{width: '100%',backgroundColor: 'background.default'}}>
+      <Grid container sx={{width: '100%',backgroundColor: 'background.paper'}}>
         <Grid item xs={11} >
             <Typography  
                 sx={{

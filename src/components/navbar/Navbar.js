@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react'
+import Box from '@mui/material/Box';
+
 
 const navBarItems =[
   {
@@ -43,16 +45,8 @@ export const Navbar = () => {
 
   return (
     <nav className='navbar' onClick={handleClick} ref={navBar} >
-      {/* {width<600&&open&&
-        navBarItems.map((item)=>(
-          <div key={item.id}><a href={item.link}>{item.destino}</a></div>
-        ))
-      }  
-      {width>600&&
-        navBarItems.map((item)=>(
-          <div key={item.id}><a href={item.link}>{item.destino}</a></div>
-        ))
-      }    */}
+      <Box sx={{height: '100%', width: '100%',backgroundColor: 'info.light'}}>
+      </Box>
     </nav>
   )
 }

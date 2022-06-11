@@ -5,7 +5,6 @@ import { MainGeneral } from './MainGeneral';
 
 export const Main = () => {
   const location = useLocation();
-  console.log(location)
 
   return (
     <section className='main'>
