@@ -137,7 +137,7 @@ body{
       /* El sidebar main hacer referecia en que habrán dos columnas
       para definir una columna vacía se completa con un . */
       "footer footer footer" 100px/
-       250px auto 250px
+       250px auto 300px
       ;        
   }
   .sidebar{

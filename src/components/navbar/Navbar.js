@@ -43,7 +43,7 @@ export const Navbar = () => {
 
   return (
     <nav className='navbar' onClick={handleClick} ref={navBar} >
-      {width<600&&open&&
+      {/* {width<600&&open&&
         navBarItems.map((item)=>(
           <div key={item.id}><a href={item.link}>{item.destino}</a></div>
         ))
@@ -52,7 +52,7 @@ export const Navbar = () => {
         navBarItems.map((item)=>(
           <div key={item.id}><a href={item.link}>{item.destino}</a></div>
         ))
-      }   
+      }    */}
     </nav>
   )
 }
