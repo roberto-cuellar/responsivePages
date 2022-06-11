@@ -25,11 +25,11 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [width,setWidth] = useState(window.innerWidth)
 
-  const handleResize = () =>{
+  const handleResize = () =>{ // Función para setear el tamaño de la pantalla
     setWidth(window.innerWidth);
   }
   
-  const handleClick = (event) =>{
+  const handleClick = (event) =>{ // Función para abrir la barra de navegación al cambiar el estado
     setOpen(true);
   }
 
