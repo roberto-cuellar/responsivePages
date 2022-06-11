@@ -33,9 +33,6 @@ export const MainArticulo = () => {
     //const articulo = useContext(articuloS);
     const contextArticulo = useContext(ArticleContext);
     const articulo = JSON.parse(localStorage.getItem('articuloSeleccionado')).article;
-    console.log(articulo)
-
-    // const articulo = contextArticulo.articuloEstado[0].article;
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);

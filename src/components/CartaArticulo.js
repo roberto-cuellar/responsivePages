@@ -39,7 +39,7 @@ export const CartaArticulo = ({articulo}) => {
 
   return (
     <Fade in={true}>
-    <Card  variant="outlined"  sx={{ boxShadow: 4,borderRadius: 2, maxWidth: '100%', marginBottom: 1 }}>
+    <Card  variant="outlined"  sx={{ boxShadow: 4,borderRadius: 2, maxWidth: '100%', marginBottom: 1, textAlign: 'left' }}>
         <CardContent>
             <Link onClick={()=>handleSelection(articulo)} underline="hover">
                 <Typography  variant="h5" component="div">

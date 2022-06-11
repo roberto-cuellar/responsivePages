@@ -30,6 +30,7 @@ export const MainGeneral = () => {
                 value={descripcion}
                 onChange={handleChange}
                 autoComplete = 'off'
+                sx={{width: '100%'}}
                 />
         <Typography  
             sx={{
