@@ -31,7 +31,7 @@ body{
   min-height: 100vh;
   display: grid;
   grid-template:
-    "header" 100px
+    "header" 120px
     /* "navbar" 50px */
     "main" auto
     "sidebar" 100px

@@ -49,7 +49,7 @@ export const MainArticulo = () => {
                 my={1}
                 >{articulo.titulo}
             </Typography>
-                    <Link href={'https://ojs.unipamplona.edu.co/ojsviceinves/index.php/bistua/'} underline="hover">
+                    <Link href={'https://ojs.unipamplona.edu.co/ojsviceinves/index.php/bistua/'} target="_blank" underline="hover">
                         <Typography sx={{ fontSize: 14,textAlign: 'left' }} gutterBottom>
                                 BISTUA {`Vol. ${articulo.vol} num ${articulo.num}. Año ${articulo.year}`}
                         </Typography>
